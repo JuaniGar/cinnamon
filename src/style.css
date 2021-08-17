@@ -1,0 +1,21 @@
+body{
+    background-color: yellow;
+}
+.navTitle{
+    color:pink;
+    float: left;
+}
+.navLink{
+    text-decoration: none;
+    color:black;
+}
+
+.navLink:hover{
+    color:pink;
+    transition: 0.4s;
+}
+
+.navItem{
+    display:inline;
+    margin: 0 20px;
+}
