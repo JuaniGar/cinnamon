@@ -1,21 +1,50 @@
-body{
-    background-color: yellow;
+*{
+    margin:0;
+    padding: 0;
+   
+}
+
+body, #root{
+    background-color: pink;
+    min-height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 3px black;
 }
 .navTitle{
-    color:pink;
-    float: left;
+    color:yellow;
+    margin-left: 5px;
 }
 .navLink{
     text-decoration: none;
-    color:black;
+    color:yellow;
 }
-
 .navLink:hover{
-    color:pink;
+    color:black;
     transition: 0.4s;
 }
 
 .navItem{
     display:inline;
     margin: 0 20px;
+}
+.material-icons{
+    text-decoration: none;
+    color: yellow;
+}
+
+.sectionTitle{
+    display: flex;
+    justify-content: space-around;
+    margin-top:10px;
+}
+.sectionContainer{
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
