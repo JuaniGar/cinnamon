@@ -12,11 +12,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 2px 3px black;
 }
-.navTitle{
-    color:yellow;
-    margin-left: 5px;
+.logo{
+    width: 10vw;
+    margin-left: 20px;
 }
 .navLink{
     text-decoration: none;
@@ -30,6 +29,7 @@ header{
 .navItem{
     display:inline;
     margin: 0 20px;
+    font-size: 22px;
 }
 .material-icons{
     text-decoration: none;
@@ -41,10 +41,25 @@ header{
     justify-content: space-around;
     margin-top:10px;
 }
-.sectionContainer{
+
+.cardsContainer{
     margin-top: 5px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.card{
+    width: 25%;
+    border: 2px solid black;    
+}
+.cardForm{
+    margin: 5px;
+}
+.cardFormBtn, .cardFormText{
+    display: inline;
+}
+.cardImg{
+    width:100%;
 }

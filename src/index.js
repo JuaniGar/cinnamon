@@ -14,7 +14,7 @@ import ReactDOM from "react-dom"
 
 import App from "./App"
 import "./style.css" 
-// 4) Función render
+// 4) Función render.
 
 ReactDOM.render(<App/>, document.querySelector("#root"))
 

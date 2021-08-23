@@ -1,9 +1,9 @@
 import CartWidget from './CartWidget';
-
+import icon from '../media/icon.jpg';
 const NavBar = () =>{
   return(
     <header>
-        <h1 className="navTitle">Cinnamon</h1>
+        <img className="logo" src={icon} alt= "Logo Cinnamon"></img>
         <nav>
             <ul className="navList">
                 <li className="navItem"><a className="navLink" href="#">Inicio</a></li>
