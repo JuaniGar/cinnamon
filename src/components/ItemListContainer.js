@@ -1,26 +1,9 @@
-import {useState} from 'react';
+import ItemCount from "./ItemCount"
 import product1 from '../media/product1.jpg';
 import product2 from '../media/product2.jpg';
 import product3 from '../media/product3.jpg';
-const ItemListContainer = (props) => {
-    const stock = 5
-    const [count, setCount] = useState(0)
 
-    const sumar = () =>  {
-        if (stock > count){
-            setCount(count + 1)}
-            else{
-                setCount(count + 0)
-            }   
-    }
-    const restar = () =>{
-        if (count>1){
-            setCount(count - 1)}
-            else{
-                setCount(count - 0)
-            }   
-        }
-    
+const ItemListContainer = (props) => {
     return ( 
         <>
         <h1 className="sectionTitle">{props.section}</h1>
@@ -28,12 +11,7 @@ const ItemListContainer = (props) => {
           <div className="card" >
               <h3>Producto 1</h3>
               <img className="cardImg"src={product1} alt="Producto 1"/>
-              <div className="cardForm">
-                  <button className="cardFormBtn" onClick={restar}>-</button>
-                  <p className="cardFormText">Cantidad: {count} </p>
-                  <button className="cardFormBtn" onClick={sumar}>+</button><br></br>
-                  <button >Sumar al carrito</button>
-              </div>
+              <ItemCount stock={10} initial={0}/>
           </div>
           <div className="card">
               <h3>Producto 2</h3>
