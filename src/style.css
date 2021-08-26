@@ -52,7 +52,17 @@ header{
 
 .card{
     width: 25%;
-    border: 2px solid black;    
+    border: 2px solid black;   
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.cardImg{
+    width:100%;
+    margin:5px;
+}
+.cardTitle{
+    margin:5px;
 }
 .cardForm{
     margin: 5px;
@@ -60,6 +70,4 @@ header{
 .cardFormBtn, .cardFormText{
     display: inline;
 }
-.cardImg{
-    width:100%;
-}
+
