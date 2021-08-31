@@ -12,8 +12,8 @@ let promiseData = () =>{
                {id:1, nombre: "Producto 1", descripcion:"Este es el producto 1", precio:"$300", stock:"10", img:product1},
                {id:2, nombre: "Producto 2", descripcion:"Este es el producto 2", precio:"$200", stock:"30", img:product2},
                {id:3, nombre: "Producto 3", descripcion:"Este es el producto 3", precio:"$600", stock:"5", img:product3}
-           ],2000)
-       })
+           ])
+       },2000)
        );
     }
     

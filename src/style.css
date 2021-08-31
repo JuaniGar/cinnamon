@@ -71,3 +71,11 @@ header{
     display: inline;
 }
 
+.detailContainer{
+    margin:10px;
+    width:33%;
+    border: 2px dashed yellow;
+}
+.detailTitle{
+    font-size: 24px;
+}
