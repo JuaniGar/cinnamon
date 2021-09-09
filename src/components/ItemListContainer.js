@@ -2,12 +2,12 @@
 import ItemList from "./ItemList";
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     return ( 
         <>
         <div>
-        <h1 className="sectionTitle">{props.section}</h1>
+        <h1 className="sectionTitle">Productos</h1>
         <ItemList/>
         </div>
       

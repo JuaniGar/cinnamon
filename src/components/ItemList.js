@@ -28,6 +28,7 @@ const ItemList = () => {
      });
 
     return (
+        items===0 ? <h1>Cargando productos...</h1> :
         <div className="cardsContainer">
             {items.map((item) => (
                 <Item key={item.id} data={item} />
