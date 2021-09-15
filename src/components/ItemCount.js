@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, agregar}) => {
     
     let [count, setCount] = useState(initial)
+
+    let [endCart, setEndCart] = useState(false)
+
 
     const sumar = () =>  {
         if (stock > count){
@@ -12,19 +16,22 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if (count>1){
             setCount(count - 1)}
     }
-
-    const agregar = () => {
-        if (stock > 0){
-            onAdd(count)
-        }
+    
+    const add = () => {
+        agregar(count)
+        setEndCart(true)
     }
+    
     return (
         <>
             <div className="cardForm">
                 <button className="cardFormBtn" onClick={restar}>-</button>
                 <p className="cardFormText">Cantidad: {count} </p>
                 <button className="cardFormBtn" onClick={sumar}>+</button><br></br>
-                <button onClick={agregar}> Agregar al carrito</button>
+                {endCart ? 
+                <Link to="/cart"><button>Finalizar compra</button></Link>:
+                <button onClick={add}> Agregar al carrito</button>
+                }
             </div>
         </>
     );

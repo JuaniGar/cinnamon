@@ -10,7 +10,7 @@ const ItemDetailContainer = () =>{
     const {id} = useParams();
     const [itemDesc, setItemDesc] = useState([])
     useEffect(()=>{
-        fetch('https://mocki.io/v1/9c17a66c-59ff-4dbb-8dfc-f664b22b2be3')
+        fetch('https://mocki.io/v1/e68a9e2a-8631-495a-bf7e-bb89b0e6d68e')
         .then(response => response.json())
         .then((detail)=>{
             const select = detail.find(element => element.id === id)
