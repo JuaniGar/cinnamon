@@ -1,15 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ItemCount from './ItemCount';
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
 
 
 const ItemDetail=({detail})=>{
+    const {addItem} = useContext(CartContext)
+    const {removeItem} = useContext(CartContext)
 
-    const agregar = (count) => {
+    const onAdd = (quantity) => {
+        const addedItem = {...detail, quantity}
         if (detail.stock > 0){
-            console.log(count)
+            addItem(addedItem)
         }
     }
+
+
     return (
         <>
         <h3>Detalles del producto</h3>
@@ -22,7 +29,7 @@ const ItemDetail=({detail})=>{
             <li>Variedad 2 </li>
             <li>Variedad 3 </li>        
             <p>Stock:{detail.stock}</p>
-            <ItemCount stock={detail.stock} initial={1} agregar={agregar}/>
+            <ItemCount stock={detail.stock} initial={1} onAdd={onAdd}/>
         </div>
         <Link to="/">
             <button>Volver a la página principal</button>

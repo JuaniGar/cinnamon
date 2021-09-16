@@ -17,6 +17,7 @@ const ItemDetailContainer = () =>{
             setItemDesc(select)
         });
     },[]);
+   
     return (
     <>
         <ItemDetail detail={itemDesc}/>
