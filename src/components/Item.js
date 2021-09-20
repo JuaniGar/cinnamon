@@ -14,7 +14,9 @@ const Item = ({data}) => {
             </Link>
                 <p>{data.precio}</p>
                 <p>{data.descripcion}</p>
-                <ItemCount stock={data.stock} initial={0}/>
+            <Link to={`/item/${data.id}`} className="detailLink">
+                Ver Más
+            </Link>
             </div>
             
         </>

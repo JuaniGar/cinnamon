@@ -27,22 +27,22 @@ const ItemCount = ({stock, initial, onAdd }) => {
     }
    
 
-    const clear = () =>{clearCart()}
+    const clear = () =>{
+        clearCart()
+    }
 
     return (
         <>
+        {endCart ? 
+            <Link to="/cart"><button>Finalizar compra</button></Link>:
             <div className="cardForm">
                 <button className="cardFormBtn" onClick={restar}>-</button>
                 <p className="cardFormText">Cantidad: {quantity} </p>
                 <button className="cardFormBtn" onClick={sumar}>+</button><br></br>
-                {endCart ? 
-                <Link to="/cart"><button>Finalizar compra</button></Link>:
                 <button onClick={add}> Agregar al carrito</button>
-                }
                 <button onClick={clear}>vaciar carrito</button>
-                
-             
             </div>
+        }
         </>
     );
 }

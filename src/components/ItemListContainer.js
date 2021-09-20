@@ -10,7 +10,6 @@ const ItemListContainer = () => {
         <h1 className="sectionTitle">Productos</h1>
         <ItemList/>
         </div>
-      
         </>
      );
 }
