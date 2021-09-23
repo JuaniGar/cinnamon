@@ -86,3 +86,25 @@ header{
     flex-flow: column nowrap;
     align-items: center;
 }
+table{
+border-collapse: collapse;
+width:90%;
+}
+.tableItemFont{
+    font-weight: 200;
+   
+}
+th{
+padding:50px;
+border-bottom: 2px solid black;
+border-right: 0px;
+}
+.noShow{
+    display: none;
+}
+.totalPrice{
+    float:right;
+    margin-right: 10%;
+    margin-top:20px;
+    font-weight: bold;
+}

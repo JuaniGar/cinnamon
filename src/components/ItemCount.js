@@ -4,7 +4,7 @@ import { CartContext } from './CartContext';
 
 const ItemCount = ({stock, initial, onAdd }) => {
     
-    const {clearCart} = useContext(CartContext)
+    const {cart, clearCart, removeItem} = useContext(CartContext)
     
 
     let [quantity, setQuantity] = useState(initial)
@@ -30,7 +30,8 @@ const ItemCount = ({stock, initial, onAdd }) => {
     const clear = () =>{
         clearCart()
     }
-
+   
+    
     return (
         <>
         {endCart ? 
@@ -40,7 +41,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
                 <p className="cardFormText">Cantidad: {quantity} </p>
                 <button className="cardFormBtn" onClick={sumar}>+</button><br></br>
                 <button onClick={add}> Agregar al carrito</button>
-                <button onClick={clear}>vaciar carrito</button>
+                <button onClick={clear}>Vaciar carrito</button>
             </div>
         }
         </>

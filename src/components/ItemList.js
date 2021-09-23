@@ -9,9 +9,9 @@ let promiseData = () =>{
     return new Promise((res, rej)=>
        setTimeout(()=>{
            res([
-               {id:1, nombre: "Producto 1", descripcion:"Este es el producto 1", precio:"$300", stock:"10", img:product1},
-               {id:2, nombre: "Producto 2", descripcion:"Este es el producto 2", precio:"$200", stock:"30", img:product2},
-               {id:3, nombre: "Producto 3", descripcion:"Este es el producto 3", precio:"$600", stock:"5", img:product3}
+               {id:1, nombre: "Producto 1", descripcion:"Este es el producto 1", precio:"300", stock:"10", img:product1},
+               {id:2, nombre: "Producto 2", descripcion:"Este es el producto 2", precio:"200", stock:"30", img:product2},
+               {id:3, nombre: "Producto 3", descripcion:"Este es el producto 3", precio:"600", stock:"5", img:product3}
            ])
        },2000)
        );
@@ -28,7 +28,6 @@ const ItemList = () => {
      });
 
     return (
-        items===0 ? <h1>Cargando productos...</h1> :
         <div className="cardsContainer">
             {items.map((item) => (
                 <Item key={item.id} data={item} />

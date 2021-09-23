@@ -7,17 +7,25 @@ const {Provider} = CartContext
 const CustomProvider = ({children}) => {
     const [cart, setCart] = useState([])
     
-    const addItem = (product) =>{
-        setCart([...cart, product])
+    const addItem = (product, quantity) =>{
+        
+        if(isInCart(product.id)){
+        
+        }else{
+            setCart([...cart, product])
+        }
     }
-    const removeItem = (id) =>{
-        const itemRemoved = cart.filter((product) => product.id !== id)
-        setCart(itemRemoved)
+     
+    const removeItem = (item) => {
+        const itemRemoved = cart.filter((itemInCart) => item.id !== itemInCart.id);
+        setCart(itemRemoved);
     }
     const clearCart = () =>{
         setCart([])
     }
-  
+ 
+    const isInCart = (id) => cart.find(product => product.id === id)
+
     const context = {
         cart ,
         addItem,

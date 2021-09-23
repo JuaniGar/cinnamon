@@ -7,7 +7,7 @@ import { CartContext } from './CartContext';
 
 const ItemDetail=({detail})=>{
     const {addItem} = useContext(CartContext)
-    const {removeItem} = useContext(CartContext)
+    
 
     const onAdd = (quantity) => {
         const addedItem = {...detail, quantity}
@@ -15,6 +15,7 @@ const ItemDetail=({detail})=>{
             addItem(addedItem)
         }
     }
+    
 
 
     return (
