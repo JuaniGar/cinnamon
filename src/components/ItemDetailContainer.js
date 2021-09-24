@@ -2,25 +2,43 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-
+import {firestore} from '../firebase.js'
 
 
 
 const ItemDetailContainer = () =>{
+    const [detail, setDetail] = useState([])
     const {id} = useParams();
-    const [itemDesc, setItemDesc] = useState([])
-    useEffect(()=>{
-        fetch('https://mocki.io/v1/7e1ed7be-6bdd-474a-a214-bcd1455a96fd')
-        .then(response => response.json())
-        .then((detail)=>{
-            const select = detail.find(element => element.id === id)
-            setItemDesc(select)
-        });
-    },[]);
-   
+    useEffect(() => {
+        const db = firestore
+        const collection = firestore.collection("products")
+        
+        const query = collection.get()
+    
+        query
+        .then((snapshot)=>{
+            
+                const docs = snapshot.docs
+    
+                const products = []
+    
+                docs.forEach((doc)=>{
+                    const docSnapshot = doc
+                
+                    const productsId = {...docSnapshot.data(),id:docSnapshot.id}
+                    products.push(productsId)
+                }) 
+                setDetail(products)
+               
+            })
+            
+        },[id])
+   console.log(detail);
     return (
     <>
+    {detail.map((itemDesc)=>(
         <ItemDetail detail={itemDesc}/>
+    ))}
     </>
 )
 }

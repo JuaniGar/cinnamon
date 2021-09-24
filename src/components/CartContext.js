@@ -7,10 +7,10 @@ const {Provider} = CartContext
 const CustomProvider = ({children}) => {
     const [cart, setCart] = useState([])
     
-    const addItem = (product, quantity) =>{
+    const addItem = (product) =>{
         
         if(isInCart(product.id)){
-        
+            
         }else{
             setCart([...cart, product])
         }
