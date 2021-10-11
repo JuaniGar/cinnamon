@@ -1,8 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
-import Form from './Form';
-
 import { useParams } from 'react-router-dom';
 import {firestore} from '../firebase.js'
 
@@ -10,10 +8,11 @@ import {firestore} from '../firebase.js'
 
 const ItemDetailContainer = () =>{
     const [detail, setDetail] = useState([])
+    const [loading, setLoading] = useState(true)
     const {id} = useParams();
     useEffect(() => {
         const db = firestore
-        const collection = firestore.collection("products")
+        const collection = db.collection("products")
         
         
         const query = collection.get()
@@ -32,17 +31,18 @@ const ItemDetailContainer = () =>{
                     products.push(productsId)
                 }) 
                 setDetail(products)
-               
+                setLoading(false)
             })
             
         },[id])
    console.log(detail);
     return (
     <>
-    <Form/>
-    {detail.map((itemDesc)=>(
+    
+    {loading ? <h1>Cargando productos...</h1> : detail.map((itemDesc)=>(
         <ItemDetail detail={itemDesc}/>
     ))}
+    
     </>
 )
 }

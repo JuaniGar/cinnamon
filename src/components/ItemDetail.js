@@ -22,7 +22,7 @@ const ItemDetail=({detail})=>{
         <>
         <h3>Detalles del producto</h3>
         <div className="detailContainer">
-            <h1 className="detailTitle">{detail.nombre} - {detail.precio}</h1>
+            <h1 className="detailTitle">{detail.nombre} - ${detail.precio}</h1>
             <img className="detailImg" src={detail.img} alt="Imagen del producto"/>
             <p className="detailDesc">{detail.descripcion}</p>
             <p>Variedades del producto:</p>

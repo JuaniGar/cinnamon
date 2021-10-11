@@ -43,16 +43,18 @@ header{
 }
 
 .cardsContainer{
-    margin: 5px;
+    margin: 10px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 .card{
     width: 25%;
-    border: 2px solid black;   
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 10%;   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -78,6 +80,9 @@ header{
 }
 .detailTitle{
     font-size: 24px;
+}
+.detailImg{
+    width:100%;
 }
 .itemLink{
     text-decoration: none;
