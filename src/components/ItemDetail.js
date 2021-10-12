@@ -24,11 +24,7 @@ const ItemDetail=({detail})=>{
         <div className="detailContainer">
             <h1 className="detailTitle">{detail.nombre} - ${detail.precio}</h1>
             <img className="detailImg" src={detail.img} alt="Imagen del producto"/>
-            <p className="detailDesc">{detail.descripcion}</p>
-            <p>Variedades del producto:</p>
-            <li>Variedad 1 </li>
-            <li>Variedad 2 </li>
-            <li>Variedad 3 </li>        
+            <p className="detailDesc">{detail.descripcion}</p>   
             <p>Stock:{detail.stock}</p>
             <ItemCount stock={detail.stock} initial={1} onAdd={onAdd}/>
         </div>

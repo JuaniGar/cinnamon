@@ -13,38 +13,26 @@ const ItemDetailContainer = () =>{
     useEffect(() => {
         const db = firestore
         const collection = db.collection("products")
-        
-        
-        const query = collection.get()
-    
-        query
-        .then((snapshot)=>{
-            
-                const docs = snapshot.docs
-    
-                const products = []
-    
-                docs.forEach((doc)=>{
-                    const docSnapshot = doc
-                
-                    const productsId = {...docSnapshot.data(),id:docSnapshot.id}
-                    products.push(productsId)
-                }) 
-                setDetail(products)
-                setLoading(false)
-            })
-            
+       
+        collection.get().then((snapshot) => {
+            const item = snapshot.docs.find(doc =>doc.id === id)
+            const data = [] 
+            const dataArray = {...item.data(),id:item.id}
+            data.push(dataArray)
+            setDetail(data)
+            setLoading(false)
+    })
         },[id])
-   console.log(detail);
+ 
     return (
     <>
     
-    {loading ? <h1>Cargando productos...</h1> : detail.map((itemDesc)=>(
+    {loading ? <h1>Cargando producto...</h1> : detail.map((itemDesc)=>(
         <ItemDetail detail={itemDesc}/>
     ))}
     
     </>
-)
+    )
 }
 
 export default ItemDetailContainer

@@ -30,7 +30,7 @@ const ItemListContainer = () => {
                 setItems(products)
                 setLoading(false)
             })
-            
+           
         },[id])
     return ( 
         <>
