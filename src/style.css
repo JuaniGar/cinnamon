@@ -5,7 +5,7 @@
 }
 
 body, #root{
-    background-color: pink;
+    background-color:#fca7d7;
     min-height: 100vh;
 }
 header{
@@ -52,12 +52,16 @@ header{
 
 .card{
     width: 25%;
-    margin: 5px;
+    margin: 15px;
     border: 2px solid black;
     border-radius: 10%;   
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+}
+.card:hover{
+    transform: scale(1.1);
+    transition: 0.8s;
 }
 .cardImg{
     width:100%;
@@ -66,18 +70,26 @@ header{
 .cardTitle{
     margin:5px;
 }
-.cardForm{
+.itemCount{
     margin: 5px;
+    align-items: center;
+    border:1px solid black;
+    border-radius: 10%;
 }
-.cardFormBtn, .cardFormText{
+.itemCountBtn, .itemCountText{
     display: inline;
 }
 
 .detailContainer{
+    position:relative;
+    left:33%;
     margin:10px;
+    padding:5px;
     width:33%;
     border: 2px dashed yellow;
+    border-radius: 5%;
 }
+
 .detailTitle{
     font-size: 24px;
 }
@@ -112,4 +124,12 @@ border-right: 0px;
     margin-right: 10%;
     margin-top:20px;
     font-weight: bold;
+}
+.btn{
+    border:none;
+    background-color: #fca7d7;
+    font-size: 18px;
+}
+.btn:hover{
+    color:white
 }

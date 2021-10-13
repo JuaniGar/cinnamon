@@ -34,11 +34,11 @@ const ItemCount = ({stock, initial, onAdd }) => {
         <>
         {endCart ? 
             <Link to="/cart"><button>Ver Carrito</button></Link>:
-            <div className="cardForm">
-                <button className="cardFormBtn" onClick={restar}>-</button>
-                <p className="cardFormText">Cantidad: {quantity} </p>
-                <button className="cardFormBtn" onClick={sumar}>+</button><br></br>
-                <button onClick={add}> Agregar al carrito</button>
+            <div className="itemCount">
+                <button className="itemCountBtn btn" onClick={restar}>-</button>
+                <p className="itemCountText">Cantidad: {quantity} </p>
+                <button className="itemCountBtn btn" onClick={sumar}>+</button><br></br>
+                <button className="btn" onClick={add}> Agregar al carrito</button>
             </div>
         }
         </>

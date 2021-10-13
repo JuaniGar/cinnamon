@@ -3,6 +3,8 @@ import ItemList from "./ItemList";
 import {firestore} from '../firebase.js'
 import { useParams } from 'react-router-dom';
 
+
+
 const ItemListContainer = () => {
     let [items, setItems] = useState([]) 
     const [loading, setLoading] = useState(true)
