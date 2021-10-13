@@ -5,9 +5,6 @@ import { CartContext } from './CartContext';
 const CartItems = ({cartItems, itemPrice}) => {
     const {removeItem} = useContext(CartContext)
     
-  
-  
-    
     return(
         <>
         <tr className="tableItem">
@@ -15,7 +12,7 @@ const CartItems = ({cartItems, itemPrice}) => {
             <th className="tableItemFont">${cartItems.precio}</th>
             <th className="tableItemFont">{cartItems.quantity}</th>
             <th className="tableItemFont">${itemPrice}</th>
-            <th><button onClick={() => removeItem(cartItems)}>Borrar</button></th>
+            <th><button className="deleteBtn" onClick={() => removeItem(cartItems)}>X</button></th>
         </tr>
         </>
     )

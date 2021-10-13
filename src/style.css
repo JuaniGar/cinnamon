@@ -72,12 +72,13 @@ header{
 }
 .itemCount{
     margin: 5px;
-    align-items: center;
+    text-align: center;
     border:1px solid black;
-    border-radius: 10%;
+    border-radius: 2ch;
 }
 .itemCountBtn, .itemCountText{
     display: inline;
+    font-size: 20px;
 }
 
 .detailContainer{
@@ -88,13 +89,19 @@ header{
     width:33%;
     border: 2px dashed yellow;
     border-radius: 5%;
+    text-align:center;
 }
-
+.ilcPrice{
+    font-size: 20px;
+}
 .detailTitle{
     font-size: 24px;
 }
 .detailImg{
     width:100%;
+}
+.detailLink{
+    text-decoration: none;
 }
 .itemLink{
     text-decoration: none;
@@ -112,24 +119,71 @@ width:90%;
    
 }
 th{
-padding:50px;
-border-bottom: 2px solid black;
-border-right: 0px;
+    padding:50px;
+    border-bottom: 2px solid black;
+    border-right: 0px;
+    font-size:18px;
 }
 .noShow{
     display: none;
 }
 .totalPrice{
     float:right;
-    margin-right: 10%;
-    margin-top:20px;
+    margin-right: 30%;
+    margin-top:15px;
     font-weight: bold;
+    font-size: 20px;
 }
 .btn{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background:transparent;
     border:none;
-    background-color: #fca7d7;
-    font-size: 18px;
+    margin:5px;
 }
 .btn:hover{
-    color:white
+   
+    background-color: pink;
 }
+.cartBtn{
+    margin-top: 30px;
+}
+.deleteBtn{
+    font-size:15px;
+    font-weight: 800;
+    color:white;
+    border:none;
+    background: transparent;
+}
+.deleteBtn:hover{
+    color:red;
+}
+.orderForm, .orderEnd{
+    text-align: center;
+    width:50%;
+    margin:40px auto;
+    border:2px solid black;
+    border-radius: 2ch;
+}
+.loading{
+    text-align: center;
+}
+label{
+    font-size: 18px;
+}
+
+
+/*.categoryContainer{
+    text-align: center;
+    margin:20px;
+}
+.categoryItem{
+    display:inline;
+    margin:0 10px;
+}   
+.categoryTitle{
+}
+*/

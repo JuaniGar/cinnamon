@@ -3,7 +3,7 @@ import { CartContext } from "./CartContext"
 import { useContext} from "react"
 import {Link} from 'react-router-dom';
 import CartItems from "./CartItems"
-import {firestore} from '../firebase.js'
+import Form from './Form';
 
 
 
@@ -19,17 +19,11 @@ const Cart = () => {
         totalPrice+=totalUni[i];
     }
 
-  /*  const sendOrder = () =>{
-        if(cart.length != 0){
-        const orders = firestore.collection("orders")
-        }
-    }
-*/
     return (
         <>
         {cart.length === 0 ? <div>
             <h1>El carrito está vacío</h1>
-            <Link to="/">Volver a la página principal</Link>
+            <Link to="/"><button className="btn">Volver a la página principal</button></Link>
             </div>
         :
         <div>
@@ -48,22 +42,13 @@ const Cart = () => {
         ))}
         </tbody>
         </table>
-        <button onClick={clearCart}>Vaciar carrito</button>
-        <Link to="/"><button> Agregar más productos</button></Link>
-        <p className="totalPrice">Precio final: ${totalPrice}</p>       
+        <p className="totalPrice">Precio final: ${totalPrice}</p>    
+        <button className="btn cartBtn" onClick={clearCart}>Vaciar carrito</button>
+        <hr width="250"/>
+        <Link to="/"><button className="btn"> Agregar más productos</button></Link>
+        <Form/>   
         </div>
         }           
         </>
     )}
 export default Cart
-
-
-/*  
- <form>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name"></input>
-        <label for="email">Email:</label>
-        <input type="text" id="email"></input>
-        <button onClick={sendOrder}>Enviar pedido</button>
-        </form>
-*/

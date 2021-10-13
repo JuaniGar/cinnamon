@@ -8,7 +8,6 @@ import { CartContext } from './CartContext';
 const ItemDetail=({detail})=>{
     const {addItem} = useContext(CartContext)
     
-
     const onAdd = (quantity) => {
         const addedItem = {...detail, quantity}
         if (detail.stock > 0){
@@ -16,8 +15,6 @@ const ItemDetail=({detail})=>{
         }
     }
     
-
-
     return (
         <>
         <div className="detailContainer">
@@ -28,7 +25,6 @@ const ItemDetail=({detail})=>{
         <Link to="/">
             <button className="btn">Volver a la página principal</button>
         </Link>
-       
         </>
     )
 }

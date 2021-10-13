@@ -12,7 +12,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const db = firestore
-        const collection = firestore.collection("products")
+        const collection = db.collection("products")
         
         const query = collection.get()
     
@@ -36,7 +36,7 @@ const ItemListContainer = () => {
         },[id])
     return ( 
         <>
-        {loading ? <h1>Cargando productos...</h1>:
+        {loading ? <h1 className="loading">Cargando productos...</h1>:
         <div>
         <h1 className="sectionTitle">Productos</h1>
         <ItemList items={items}/>
@@ -48,3 +48,12 @@ const ItemListContainer = () => {
  
 export default ItemListContainer;
 
+/*<div className="categoryContainer">
+        <h2 className="categoryTitle">Categorías</h2>
+        <ul className="categoryList">
+            <li className="categoryItem">Snacks</li>
+            <li className="categoryItem">Tortas</li>
+            <li className="categoryItem">Muffins</li>
+        </ul>
+        </div>
+*/

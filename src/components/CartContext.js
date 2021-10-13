@@ -32,10 +32,6 @@ const CustomProvider = ({children}) => {
         removeItem,
         clearCart
     }
-
-    console.log(cart)
-    
-
     return (
         <Provider value={context}>
             {children}

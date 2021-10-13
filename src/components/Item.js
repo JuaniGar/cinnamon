@@ -11,10 +11,10 @@ const Item = ({data}) => {
                 <h3 className="cardTitle">{data.nombre}</h3>
                 <img className="cardImg" src={data.img} alt="Imagen del producto"/>
             </Link>
-                <p>${data.precio}</p>
-                <p>{data.descripcion}</p>
-            <Link to={`/item/${data.id}`} className="detailLink">
-                Ver Más
+                <p className="ilcPrice">${data.precio}</p>
+               
+            <Link to={`/item/${data.id}`} className="detailLink btn">
+                Comprar
             </Link>
             </div>
             

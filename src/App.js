@@ -6,8 +6,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomProvider from "./components/CartContext.js";
 
 
-
-
 const App = () => {
 
     return (

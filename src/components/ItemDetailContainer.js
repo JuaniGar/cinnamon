@@ -27,7 +27,7 @@ const ItemDetailContainer = () =>{
     return (
     <>
     
-    {loading ? <h1>Cargando producto...</h1> : detail.map((itemDesc)=>(
+    {loading ? <h1 className="loading">Cargando producto...</h1> : detail.map((itemDesc)=>(
         <ItemDetail detail={itemDesc}/>
     ))}
     

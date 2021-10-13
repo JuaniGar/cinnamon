@@ -1,16 +1,11 @@
-import { useState, useContext } from 'react';
+import { useState} from 'react';
 import {Link} from 'react-router-dom';
-import { CartContext } from './CartContext';
+
 
 const ItemCount = ({stock, initial, onAdd }) => {
-    
-    const {cart, clearCart, removeItem} = useContext(CartContext)
-    
 
     let [quantity, setQuantity] = useState(initial)
-
     let [endCart, setEndCart] = useState(false)
-
 
     const sumar = () =>  {
         if (stock > quantity){
@@ -25,15 +20,11 @@ const ItemCount = ({stock, initial, onAdd }) => {
         onAdd(quantity)
         setEndCart(true)
     }
-   
 
-   
-   
-    
     return (
         <>
         {endCart ? 
-            <Link to="/cart"><button>Ver Carrito</button></Link>:
+            <Link to="/cart"><button className="btn">Ver Carrito</button></Link>:
             <div className="itemCount">
                 <button className="itemCountBtn btn" onClick={restar}>-</button>
                 <p className="itemCountText">Cantidad: {quantity} </p>
