@@ -10,6 +10,7 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
+   
     useEffect(() => {
         const db = firestore
         const collection = db.collection("products")
@@ -39,6 +40,7 @@ const ItemListContainer = () => {
         {loading ? <h1 className="loading">Cargando productos...</h1>:
         <div>
         <h1 className="sectionTitle">Productos</h1>
+        
         <ItemList items={items}/>
         </div>
         }
@@ -47,13 +49,3 @@ const ItemListContainer = () => {
 }
  
 export default ItemListContainer;
-
-/*<div className="categoryContainer">
-        <h2 className="categoryTitle">Categorías</h2>
-        <ul className="categoryList">
-            <li className="categoryItem">Snacks</li>
-            <li className="categoryItem">Tortas</li>
-            <li className="categoryItem">Muffins</li>
-        </ul>
-        </div>
-*/
